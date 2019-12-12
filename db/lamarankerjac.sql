@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2019 at 03:55 PM
+-- Generation Time: Dec 12, 2019 at 01:10 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lamarankerja`
+-- Database: `lamarankerjac`
 --
 
 -- --------------------------------------------------------
@@ -60,17 +60,20 @@ CREATE TABLE `lamar_pekerjaan` (
   `perusahaan_id` int(11) NOT NULL,
   `posisi_id` int(11) NOT NULL,
   `file_data` varchar(120) DEFAULT NULL,
-  `status` int(11) NOT NULL,
-  `cek` int(11) NOT NULL
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lamar_pekerjaan`
 --
 
-INSERT INTO `lamar_pekerjaan` (`id`, `nama`, `alamat`, `no_telp`, `email`, `perusahaan_id`, `posisi_id`, `file_data`, `status`, `cek`) VALUES
-(4, 'syaban baru', 'rangknangkah', '08732423423', 'syabansim@gmail.com', 1, 4, '81e478b6772e78bf86200e07755c9fa5.pdf', 2, 0),
-(5, 'Syaban NeW', 'BLEGA', '0872342324234', 'syabansim@gmail.com', 4, 5, 'be4e439b5c4cd1333e766d58017e8582.pdf', 2, 0);
+INSERT INTO `lamar_pekerjaan` (`id`, `nama`, `alamat`, `no_telp`, `email`, `perusahaan_id`, `posisi_id`, `file_data`, `status`) VALUES
+(2, 'Syaban', 'Blega', '085233408998', 'syabansim@gmail.com', 1, 2, '17c69bf84ed54602014bec8d951d14a3.pdf', 3),
+(4, 'syaban baru', 'rangknangkah', '08732423423', 'syabansim@gmail.com', 1, 4, '81e478b6772e78bf86200e07755c9fa5.pdf', 2),
+(5, 'Syaban NeW', 'BLEGA', '0872342324234', 'syabansim@gmail.com', 4, 5, 'be4e439b5c4cd1333e766d58017e8582.pdf', 2),
+(6, 'Syaban Masbir', 'Desa Jerembe', '085233408998', 'syabansim@gmail.com', 1, 6, '9a987c05ae16081fc56a61d3fc531c0b.pdf', 1),
+(7, 'Syaban', 'Blega', '08767676767', 'syabansim@gmail.com', 1, 4, '8c334ad168f88155435f04cd0e5f70e3.pdf', 1),
+(8, 'Syaban', 'Blega', '08787878787', 'syabansim@gmail.com', 1, 4, '4cf2a0ba4f2b9b5c2e093e7549460fb5.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -253,7 +256,7 @@ CREATE TABLE `user_sub_menu` (
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
 (1, 1, 'Dashboard', 'admin', 'fas fa-fw fa-tachometer-alt', 1),
-(2, 3, 'My Profile', 'user', 'fas fa-fw fa-user', 1),
+(2, 3, 'My Profile', 'user/Profile', 'fas fa-fw fa-user', 1),
 (4, 4, 'Menu Management', 'menu', 'fas fa-fw fa-folder', 1),
 (5, 4, 'SubMenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
 (8, 2, 'Detail Perusahaan', 'perusahaan', 'fa fa-fw fa-building', 1),
@@ -264,7 +267,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (13, 2, 'Posisi', 'perusahaan/posisi', 'fas fa-fw fa-address-book', 1),
 (14, 2, 'List Pelamar', 'perusahaan/getPelamar', 'fas fa-fw fa-clipboard-list', 1),
 (19, 1, 'User Lists', 'admin/getUserlist', 'fas fa-fw fa-user', 0),
-(22, 3, 'Status', 'User/getStatus', 'fa fa-user fa-fw', 1);
+(22, 3, 'Status', 'User/getStatus', 'fa fa-user fa-fw', 1),
+(23, 3, 'Home', 'user', 'fa fa-fw fa-home', 1);
 
 --
 -- Indexes for dumped tables
@@ -352,7 +356,7 @@ ALTER TABLE `gaji`
 -- AUTO_INCREMENT for table `lamar_pekerjaan`
 --
 ALTER TABLE `lamar_pekerjaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `perusahaan`
@@ -400,7 +404,7 @@ ALTER TABLE `user_menu`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
